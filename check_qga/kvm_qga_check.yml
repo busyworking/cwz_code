@@ -1,0 +1,23 @@
+---                       #固定格式
+- hosts: openstack_computer     #定义需要执行主机
+  remote_user: root       #远程用户
+
+  tasks:                      #定义一个任务的开始
+    - name: copy file         #定义任务的名称
+      copy: src=./computer_test_qga.sh dest=/opt/cloud/mon/agent/agent/   #调用模块，具体要做的事情
+
+    - name: check qga_matinode
+      shell: sh /opt/cloud/mon/agent/agent/computer_test_qga.sh
+
+    - name: get kvm_qga_check.txt
+      fetch: src={{ ansible_nodename }}_kvm_qga_check.txt dest=./qga_check_value/  force=yes
+
+    - name: del kvm_qga_check.txt
+      file:
+        path: /root/{{ ansible_nodename }}_kvm_qga_check.txt
+        state: absent
+
+    - name: del computer_test_qga.sh
+      file:
+        path: /opt/cloud/mon/agent/agent/computer_test_qga.sh
+        state: absent

@@ -1,0 +1,26 @@
+---                       #固定格式
+- hosts: openstack_controller     #定义需要执行主机
+  remote_user: root       #远程用户
+
+  tasks:                      #定义一个任务的开始
+    - name: copy file         #定义任务的名称
+      copy: src=./get_image_id_name.py dest=/opt/cloud/mon/agent/agent/   #调用模块，具体要做的事情
+
+    - name: copy file
+      copy: src=./all_qga_check_value dest=/opt/cloud/mon/agent/agent/
+
+    - name: run script
+      shell: python /opt/cloud/mon/agent/agent/get_image_id_name.py
+
+    - name: get kvm_controller_check.txt
+      fetch: src={{ ansible_nodename }}_kvm_controller_check.txt dest=./image_check_value/
+
+    - name: del kvm_qga_check.txt
+      file:
+        path: /root/{{ ansible_nodename }}_kvm_controller_check.txt
+        state: absent
+
+    - name: del get_image_id_name.py
+      file:
+        path: /opt/cloud/mon/agent/agent/get_image_id_name.py
+        state: absent

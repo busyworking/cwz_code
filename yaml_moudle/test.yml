@@ -1,0 +1,25 @@
+- HIGH_AVAILABILITY: True
+  server:
+  - ip: 192.168.113.126
+    password: 'ecwbs@V587'
+    slave: master
+    su_password: 'ecwbs@V587'
+    username: 'root'
+  - ip: 192.168.113.127
+    password: 'ecwbs@V587'
+    slave: backup
+    su_password: 'ecwbs@V587'
+    username: 'root'
+
+- PROXY_HIGH_AVAILABILITY: True
+  server:
+  - ip: 192.168.113.126
+    password: 'ecwbs@V587'
+    slave: master
+    su_password: 'ecwbs@V587'
+    username: 'root'
+  - ip: 192.168.113.127
+    password: 'ecwbs@V587'
+    slave: backup
+    su_password: 'ecwbs@V587'
+    username: 'root'

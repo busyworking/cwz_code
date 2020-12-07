@@ -1,0 +1,34 @@
+192.168.0.6 aaa c49ca2e6-fc6a-4506-8623-135e6262b8d9 running cirros f27edfae-6952-4112-83e8-e9f378e668d3 yes compute-34 1
+192.168.76.14 zhl-new-1123-01-JFHDyxEW-1 a34fd39c-f27e-4d34-87da-6691d33465c0 running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-48 0
+192.168.76.33 zhl-V6-jQo4JqxN-3 6b77e685-bcc1-4288-9473-527b6e065fb5 running rhel74-ipv6 78327c05-0d3b-419d-a68e-490d1b43b3dc yes compute-48 1
+192.168.76.94 zhl-V6-jQo4JqxN-1 1dad7434-c680-4592-8982-0315feaaffe5 running rhel74-ipv6 78327c05-0d3b-419d-a68e-490d1b43b3dc yes compute-48 1
+192.168.0.8 zq-qos-2 043a2253-bff1-43e8-9247-989355eb5ced running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-48 0
+192.168.76.7 zhl---FL9mzSgG-9 4dc7bcc8-9182-41c9-84e2-25078fcb40c5 running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-47 0
+192.168.76.60 zhl-new-1123-01-JFHDyxEW-2 b2ccce64-3246-493c-b043-0f56ff25787d running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-47 0
+192.168.76.36 zhl-new-1123-01-JFHDyxEW-3 eeb237b6-ec13-456f-a986-42b93ba39d51 running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-47 0
+192.168.0.9 zq-qos-1 3e37c2fe-8f36-4d3c-9777-a0d121ab31ed running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-47 0
+192.168.8.14 test01 3be39dd9-ad69-4989-93e9-3e4f255040fd running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 0
+192.168.76.49 testddd a7a6bf67-253f-45fc-b8b6-666e149a3b12 running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 1
+192.168.76.83 3 64bf2be1-4ad0-411b-905b-2c9f6b88dc54 running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 1
+192.168.76.4, 192.168.76.22 wangchen-instance 1cbc28d2-1526-45f0-94e1-bb9b7f984f57 running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 1
+192.168.76.37 alzuobaba-26 499d075b-9367-45dd-86f0-490cd2191151 running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 0
+192.168.0.3 Test-zq-2 a40f92ac-981a-4b8e-a9f5-4a13b2dd6065 running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 0
+172.16.0.12 Test-zq2222-2 d9745d84-8874-4b9f-a295-779fc5905351 running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 0
+192.168.0.9, 192.168.76.9 song-L1 c232b372-9898-47b4-bd81-231301a0e26e running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 0
+192.168.0.9 aaa-1 a5aad58b-4567-4437-9568-02cbfcb6180c running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 0
+172.16.0.15 Test-zq2222-5 ca12fe1f-ade9-4ade-ac63-2f4c014dc255 running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 0
+172.16.0.5 Test-zq2222-6 0a0e4010-0178-47c7-ac6c-4c0cf0f52979 running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 0
+192.168.76.120 zhl---FL9mzSgG-13 fd8d7bd3-390c-4889-8fa7-67afe54b65a5 running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 0
+192.168.76.124 zhl---FL9mzSgG-12 8e4e4471-7a60-4bad-95c7-1b5835ccdacf running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 1
+192.168.76.123 zhl---FL9mzSgG-10 9034b6fc-a8a2-4869-99d5-03ee799ce293 running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 0
+192.168.76.67 zhl--K31zFrlx-18 3597e27f-ec88-4d9e-af59-4dabb2a8864e running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 0
+192.168.76.70 zhl---FL9mzSgG-6 fc60b9b7-72cb-479b-a8e6-9881fcf7bf51 running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 0
+192.168.76.95 zhl---FL9mzSgG-11 f21d8257-cb84-4dd7-90ed-0159d79e0da8 running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 1
+192.168.76.64 zhl--K31zFrlx-16 7dd811c4-d078-4481-aa1b-a9cbda7fc437 running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 0
+192.168.76.51 zhl--K31zFrlx-13 67ea73d1-cff3-4c6e-a59c-4dcdeadec6d7 running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 0
+192.168.76.40 zhl--K31zFrlx-2 ea88ba66-f83c-4d2d-9495-19809474cfb4 running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 0
+192.168.76.71 zhl-V6-jQo4JqxN-2 9999c6e3-b7f0-4ef7-baf2-3cf9d0e4c5b0 running rhel74-ipv6 78327c05-0d3b-419d-a68e-490d1b43b3dc yes compute-7 1
+192.168.0.12 fff 93e2083a-7934-4abf-8a21-5e5116144e02 running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 0
+192.168.76.81 1 ab812107-d3e1-4ec3-80b7-a86710dd4692 running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 0
+192.168.0.13 at-kvm-ceph-21314-6vMRmD 9bc02131-125a-4789-9ba2-840f3d07ecf1 running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 0
+192.168.74.32 at-kvm-ceph-21314-52OWfG 779a58c8-bf56-4b5e-abbc-c20bf0b790a6 running at-centos73 45b87b4f-146f-49d5-be5e-0594540df76c yes compute-7 0
