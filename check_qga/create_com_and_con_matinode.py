@@ -81,3 +81,6 @@ def create_qga_matinode():
 if __name__ == '__main__':
     create_qga_matinode()
 
+
+{"desc": null, "name": "171云", "tags": [], "proxy": "9ba9ff0b-f33e-4033-a444-cb674841e969", "owners": [], "status": "在用", "user_name": "admin", "res_org_id": null, "cloudversion": null, "mcp_cloud_id": null, "mcp_cloud_name": null, "region_relation": [{"cephs": [{"id": "8f05ae1a-ea58-43a5-b15c-f8f12cdf92aa", "name": "ceph集群"}], "assets": [{"id": "1afb361f-1ecb-4d34-9099-43ada6932b45", "name": "control-45"}, {"id": "7e3af7a6-747b-4096-aeca-d3b3bd605e31", "name": "control-46"}, {"id": "684eab27-df2c-4c8d-9a7b-1194a5d63011", "name": "control-44"}], "region": "keystone"}, {"cephs": [{"id": "8f05ae1a-ea58-43a5-b15c-f8f12cdf92aa", "name": "ceph集群"}], "assets": [{"id": "1afb361f-1ecb-4d34-9099-43ada6932b45", "name": "control-45"}, {"id": "7e3af7a6-747b-4096-aeca-d3b3bd605e31", "name": "control-46"}, {"id": "684eab27-df2c-4c8d-9a7b-1194a5d63011", "name": "control-44"}], "region": "RegionKVM"}], "asset_update_type": "不自动扫描", "keystone_password": "wE8Uq8fwwz50DOTeRujMqdhxV2cd59upGLvs34LN", "keystone_project_id": "7dcf93decf9e449e8adb46ab98997d11", "keystone_server_url": "http://192.168.17.171:16191/v3"}
+

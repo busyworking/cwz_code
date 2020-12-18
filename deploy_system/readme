@@ -1,0 +1,6 @@
+1.修改deploy_matinode
+2.修改deploy_system.yml中的### 改为合适的网卡文件名称，一般为ifcfg-网卡名
+3.修改network.yml.j2中的###，修改网卡名，掩码名，网关名
+4.执行start.sh
+    #发送网卡配置信息
+    #重启网络服务

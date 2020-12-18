@@ -1,0 +1,2 @@
+[deploy_system]
+192.168.103.232 ansible_ssh_user=root ansible_ssh_pass=1234 ansible_ssh_port=22 ask_pass=true ansible_su_pass=''

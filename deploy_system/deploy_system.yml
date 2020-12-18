@@ -1,0 +1,13 @@
+---                       #固定格式
+- hosts: all     #定义需要执行主机
+  remote_user: root       #远程用户
+
+  tasks:                      #定义一个任务的开始
+    - name: setting network.yml
+      template:
+        src: ./network.yml.j2
+        dest: /etc/sysconfig/network-scripts/###
+
+    - name: restart network
+      shell: systemctl restart network
+
