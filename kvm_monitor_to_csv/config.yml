@@ -1,0 +1,17 @@
+---
+  config:
+    monitor_ip: '192.168.113.133' #监控系统的vip(单节点部署模式则为主节点ip)
+    monitor_url_port: 13402  #监控数据接口，默认为18080
+    db_port: 13010 #数据库端口，默认为5432
+    dates:
+      date: ''    #默认为当日，也可手动指定日期，日期格式为xxxx-xx-xx，例如 2013-10-10
+      s_time: 8   #开始时间，默认为早上8点，也可手动修改,但是必须为【0-23】之间的整数
+      e_time: 20  #结束时间，默认为晚上8点，也可手动修改,但是必须为【0-23】之间的整数，切小于等于s_time
+    metric_name:  #想要采集的指标的名称
+      - cpu.busy/name=cpu,type=vm
+      - mem.memused.percent/name=memory,type=vm
+      - mem.memtotal/name=memory,type=vm
+    hosts:        #默认为监控系统纳管的所有云主机，对于不需要的云主机可以手动删除或注释掉其对应的名称
+#      - host1
+#      - host2
+#      - host3
