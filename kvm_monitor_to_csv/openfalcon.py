@@ -82,17 +82,27 @@ def main():
         date = datetime.datetime.now().strftime('%Y-%m-%d')
     s_time = int(config.get("config").get('dates').get('s_time'))
     e_time = int(config.get("config").get('dates').get('e_time'))
-    hosts = config.get("config").get('hosts')
-    metric_name = config.get("config").get('metric_name')
-    if not hosts:
-        host_info = get_host(ip, db_port)
+    hosts_black_sheet = config.get("config").get('hosts_black_sheet')
+    metric_name = ['cpu.busy/name=cpu,type=vm', 'mem.memused.percent/name=memory,type=vm', 'mem.memtotal/name=memory,type=vm']
+    host_info = get_host(ip, db_port)
+    del_list = []
+    if host_info:
+        if hosts_black_sheet:
+            for k,v in host_info:
+                if v in hosts_black_sheet:
+                    del_list.append(k)
+        for item in del_list:
+            del host_info[item]
         hosts = host_info.values()
         vm_uuid = host_info.keys()
+    else:
+        hosts = []
+        vm_uuid = []
     monitor_url = 'http://{ip}:{port}/api/v1/graph/history'.format(ip=ip, port=port)
     response_data = get_monitor_data(s_time, e_time, metric_name, vm_uuid, monitor_url, date)
-
+    data_list = []
     f = open(pwd + '/outs/{}'.format(date), "w")
-    f.write('整点时间点，虚拟机名称，CPU使用率（%），内存使用量（GB)\n')
+    f.write('整点时间点,虚拟机名称,CPU使用率(%),内存使用量（GB)\n')
     cpu_val = []
     mem_used_percent = []
     mem_used_total = []
@@ -117,13 +127,73 @@ def main():
             except:
                 cpu = 'null'
                 mem = 'null'
-            workbook = xlwt.Workbook(encoding='utf-8')
-            worksheet = workbook.add_sheet('{}'.format(date))
-            style = xlwt.XFStyle()  # 初始化样式
 
+            default_style = xlwt.XFStyle()  # 格式信息
+            font = xlwt.Font()  # 字体基本设置
+            font.name = u'微软雅黑'
+            font.color = 'black'
+            font.height = 220  # 字体大小，220就是11号字体，大概就是11*20得来的吧
+            default_style.font = font
+            alignment = xlwt.Alignment()  # 设置字体在单元格的位置
+            alignment.horz = xlwt.Alignment.HORZ_CENTER  # 水平方向
+            alignment.vert = xlwt.Alignment.VERT_CENTER  # 竖直方向
+            default_style.alignment = alignment
+            files = xlwt.Workbook(encoding='utf-8')
+            # 创建sheet
+            sheet1 = files.add_sheet(u'{}'.format(date), cell_overwrite_ok=True)
+
+            # 写入数据
+            row0 = [u'整点时间', u'虚拟机名称', u'CPU使用率（%）', u'内存使用量（GB)']
+
+            # 设置列宽
+            for item in range(len(row0)):
+                col_width = sheet1.col(item)  # xlwt中是行和列都是从0开始计算的
+                col_width.width = 360 * 20
+            # 标题格式
+            alignment = xlwt.Alignment()  # Create Alignment
+            alignment.horz = xlwt.Alignment.HORZ_CENTER  # May be: HORZ_GENERAL, HORZ_LEFT, HORZ_CENTER, HORZ_RIGHT, HORZ_FILLED, HORZ_JUSTIFIED, HORZ_CENTER_ACROSS_SEL, HORZ_DISTRIBUTED
+            alignment.vert = xlwt.Alignment.VERT_CENTER  # May be: VERT_TOP, VERT_CENTER, VERT_BOTTOM, VERT_JUSTIFIED, VERT_DISTRIBUTED
+            style = xlwt.XFStyle()  # Create Style
+            style.alignment = alignment  # Add Alignment to Style
+            font = xlwt.Font()  # 为样式创建字体
+            font.name = 'Times New Roman'
+            font.bold = True  # 黑体
+            font.height = 280
+            style.font = font  # 设定样式
+
+            # 内容格式
+            default_style = xlwt.XFStyle()  # 格式信息
+            font = xlwt.Font()  # 字体基本设置
+            font.name = u'微软雅黑'
+            font.color = 'black'
+            font.height = 240  # 字体大小，220就是11号字体，大概就是11*20得来的吧
+            default_style.font = font
+            alignment = xlwt.Alignment()  # 设置字体在单元格的位置
+            alignment.horz = xlwt.Alignment.HORZ_CENTER  # 水平方向
+            alignment.vert = xlwt.Alignment.VERT_CENTER  # 竖直方向
+            default_style.alignment = alignment
+            len_list = range(0, len(row0))
+            # 生成第一行
+            for i in len_list:
+                sheet1.write(0, i, row0[i], style)
             f.write(u'{time},  {name},  {cpu},  {mem}\n'.format(time=n, name=vm_name,cpu=cpu,mem=mem))
+            data_list.append(n)
+            data_list.append(vm_name)
+            data_list.append(cpu)
+            data_list.append(mem)
         del cpu_val[0:]
         del mem_used_GB[0:]
+    counts = 1
+    i = 0
+    for item in data_list:
+        sheet1.write(counts, i, item, default_style)
+        i = i + 1
+        if i > 3:
+            i = 0
+            counts = counts+1
+    if os.path.exists('{}/outs/{}.xls'.format(pwd,date)):
+        os.remove('{}/outs/{}.xls'.format(pwd,date))
+    files.save('{}/outs/{}.xls'.format(pwd,date))
 
 
 if __name__ == '__main__':

@@ -11,7 +11,7 @@
       - cpu.busy/name=cpu,type=vm
       - mem.memused.percent/name=memory,type=vm
       - mem.memtotal/name=memory,type=vm
-    hosts:        #默认为监控系统纳管的所有云主机，对于不需要的云主机可以手动删除或注释掉其对应的名称
+    hosts_black_sheet:        #默认为监控所有的云主机，如需要剔除的请在此按照yaml文件的如下格式输入云主机的名称，并取消注释
 #      - host1
 #      - host2
 #      - host3
