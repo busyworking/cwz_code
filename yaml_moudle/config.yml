@@ -1,0 +1,10 @@
+---
+config:
+  hosts:
+#    - 'host1'
+#    - 'host2'
+  dates:
+    date: '' #默认为当日，也可手动修改时间
+    s_time: 8
+    e_time: 20
+

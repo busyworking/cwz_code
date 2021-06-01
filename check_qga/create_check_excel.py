@@ -72,7 +72,7 @@ def set_stlye(name, height, bold=False):
 def write_excel():
     f = xlwt.Workbook(encoding = 'utf-8')
     # 创建sheet
-    sheet1 = f.add_sheet(u'sheet1', cell_overwrite_ok=True)
+    sheet1 = f.add_sheet(u'QGA检查结果', cell_overwrite_ok=True)
 
     #写入数据
     row0 = [u'云主机ip',  u'云主机主机名', u'云主机uuid',u'云主机运行状态', u'云主机对应镜像名', u'云主机对应镜像uuid',
